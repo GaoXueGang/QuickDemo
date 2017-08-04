@@ -1,5 +1,5 @@
 
-SCRIPT_VERSION_ID = 6  -- 脚本版本ID
+SCRIPT_VERSION_ID = 1  -- 脚本版本ID
 
 HEART_BEAT_SECONDS = 5 -- 心跳时间间隔
 

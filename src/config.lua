@@ -29,8 +29,8 @@ DESIGN_HEIGHT = 720
 CONFIG_SCREEN_AUTOSCALE = "FIXED_HEIGHT"
 CONFIG_FPS_NUMBERS = 60  			-- 设置帧频
 
-GAME_ID = 111						-- 游戏ID
-VERSION_HOST = "2.0"  				-- 整包版本号
+GAME_ID = 1000						-- 游戏ID
+VERSION_HOST = "1.0"  				-- 整包版本号
 
 GAME_CHANNEL_ID = 1					-- 游戏渠道ID，注意在对应平台会被覆盖
 BRANCH_ID = "master"  				-- 脚本代码分支ID

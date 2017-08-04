@@ -89,21 +89,21 @@ bool AppDelegate::applicationDidFinishLaunching()
     //register custom function
     //LuaStack* stack = engine->getLuaStack();
     //register_custom_function(stack->getLuaState());
-    
-    //FileUtils::getInstance()->setResourceEncryptKeyAndSign("test", "XXTEA");
+
+    FileUtils::getInstance()->setResourceEncryptKeyAndSign("SET_YOUR_PWD", "YOUR_SIGN");
 #if 0
     // use luajit bytecode package
-    stack->setXXTEAKeyAndSign("2dxLua", "XXTEA");
+    stack->setXXTEAKeyAndSign("SET_YOUR_PWD", "YOUR_SIGN");
     
 #ifdef CC_TARGET_OS_IPHONE
     if (sizeof(long) == 4) {
-        stack->loadChunksFromZIP("res/game.zip");
+        stack->loadChunksFromZIP("res/init32.zip");
     } else {
-        stack->loadChunksFromZIP("res/game64.zip");
+        stack->loadChunksFromZIP("res/init64.zip");
     }
 #else
     // android, mac, win32, etc
-    stack->loadChunksFromZIP("res/game.zip");
+    stack->loadChunksFromZIP("res/init32.zip");
 #endif
     stack->executeString("require 'main'");
 #else // #if 0
