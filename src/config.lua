@@ -37,7 +37,7 @@ BRANCH_ID = "master"  				-- 脚本代码分支ID
 
 DATA_PATH = cc.FileUtils:getInstance():getWritablePath() .. ".data/" -- 写入文件目录
 
-JIT_BIT = "64"
+JIT_BIT = ""
 --[[
 if jit then
 	local target = cc.Application:getInstance():getTargetPlatform()
