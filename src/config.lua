@@ -37,7 +37,7 @@ BRANCH_ID = "master"  				-- 脚本代码分支ID
 
 DATA_PATH = cc.FileUtils:getInstance():getWritablePath() .. ".data/" -- 写入文件目录
 
-JIT_BIT = ""
+JIT_BIT = "" -- win32,android编译32位,mac编译64位
 --[[
 if jit then
 	local target = cc.Application:getInstance():getTargetPlatform()
@@ -49,7 +49,8 @@ if jit then
 		JIT_BIT = "32"
 	end
 end
---]]
+]]
+
 UPDATE_PATH = DATA_PATH .. ".loader/"	-- 热更新工作目录
 GAME_ENTRANCE = "app.MyApp"				-- APP入口，在热更新完成后会被require
 PRE_LOAD_ZIPS = {						-- 进游戏所需要预加载的ZIP列表
