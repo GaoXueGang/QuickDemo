@@ -30,14 +30,15 @@ CONFIG_SCREEN_AUTOSCALE = "FIXED_HEIGHT"
 CONFIG_FPS_NUMBERS = 60  			-- 设置帧频
 
 GAME_ID = 111						-- 游戏ID
-VERSION_HOST = "2.0"  			-- 整包版本号
+VERSION_HOST = "2.0"  				-- 整包版本号
 
 GAME_CHANNEL_ID = 1					-- 游戏渠道ID，注意在对应平台会被覆盖
 BRANCH_ID = "master"  				-- 脚本代码分支ID
 
 DATA_PATH = cc.FileUtils:getInstance():getWritablePath() .. ".data/" -- 写入文件目录
 
-JIT_BIT = ""
+JIT_BIT = "64"
+--[[
 if jit then
 	local target = cc.Application:getInstance():getTargetPlatform()
 	if target == 0 or target == 1 or target == 2 or target == 3 then
@@ -48,11 +49,12 @@ if jit then
 		JIT_BIT = "32"
 	end
 end
-UPDATE_PATH = DATA_PATH .. ".loader/"  -- 热更新工作目录
-GAME_ENTRANCE = "app.MyApp"  -- APP入口，在热更新完成后会被require
-PRE_LOAD_ZIPS = {  -- 进游戏所需要预加载的ZIP列表
+--]]
+UPDATE_PATH = DATA_PATH .. ".loader/"	-- 热更新工作目录
+GAME_ENTRANCE = "app.MyApp"				-- APP入口，在热更新完成后会被require
+PRE_LOAD_ZIPS = {						-- 进游戏所需要预加载的ZIP列表
 	"framework" .. JIT_BIT .. ".zip",
 	"game" .. JIT_BIT .. ".zip"
 }
 
-CC_DISABLE_GLOBAL = true  -- MyApp加载完成之后禁止修改全局变量
+CC_DISABLE_GLOBAL = true				-- MyApp加载完成之后禁止修改全局变量

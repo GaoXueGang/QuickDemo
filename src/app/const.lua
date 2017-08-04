@@ -15,7 +15,3 @@ end
 继续写一些全局配置
 ]]
 
---[[
-TODO_SET_PWD = 
-YOUR_SIGN = 
---]]
