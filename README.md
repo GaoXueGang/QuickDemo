@@ -22,3 +22,6 @@ https://github.com/GaoXueGang/jw_loader
 
 https://github.com/leitwolf/QuickXDev
 
+2. CocosStudio_v1.6
+
+链接：http://pan.baidu.com/s/1midvd00 密码：39sw
