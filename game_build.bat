@@ -9,7 +9,7 @@ set LUAC_COMPILE=%QUICK_V3_ROOT%quick\bin\win32\luac
 
 if not exist %DEST_DIR% mkdir %DEST_DIR%
 
-rem 单独编译main与config文件
+rem # 单独编译main与config文件
 
 if exist "%DEST_DIR%main.lua" del /s /q "%DEST_DIR%main.lua"
 if exist "%DEST_DIR%config.lua" del /s /q "%DEST_DIR%config.lua"

@@ -1,1 +1,6 @@
+# Xcode
 .data/
+obj
+
+# Python
+*.pyc

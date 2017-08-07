@@ -1,6 +1,6 @@
 @echo off
 
-rem 引擎编译脚本，负责编译 cocos 和 framework 目录到 res 目录中去
+rem # 引擎编译脚本，负责编译 cocos 和 framework 目录到 res 目录中去
 set DIR=%~dp0
 set SCRIPTS_DIR=%DIR%res\
 
