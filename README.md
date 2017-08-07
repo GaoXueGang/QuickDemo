@@ -25,3 +25,7 @@ https://github.com/leitwolf/QuickXDev
 2. CocosStudio_v1.6
 
 链接：http://pan.baidu.com/s/1midvd00 密码：39sw
+
+3. Visual Studio 2012 + BabeLua 调试环境
+
+官网下载
