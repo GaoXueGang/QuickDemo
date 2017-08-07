@@ -26,6 +26,6 @@ https://github.com/leitwolf/QuickXDev
 
 链接：http://pan.baidu.com/s/1midvd00 密码：39sw
 
-3. Visual Studio 2012 + BabeLua 调试环境
+3. Visual Studio 2015 + BabeLua 调试环境
 
 官网下载
