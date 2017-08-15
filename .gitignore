@@ -1,6 +1,7 @@
 # bat sh
 .data
 build
+update_build
 
 # Python
 *.pyc
