@@ -31,4 +31,4 @@ https://github.com/leitwolf/QuickXDev
 官网下载
 
 # 说明
-框架只有linux的sh,本没有Windows的bat,已完善.
+原框架只提供了linux下的sh,并没有提供Windows下的bat,已完善.
