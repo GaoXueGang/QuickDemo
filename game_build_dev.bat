@@ -27,6 +27,9 @@ rem # 编译入口文件
 
 call %DIR%init_build.bat
 
+rem # init_build.bat修改了DIR
+set DIR=%~dp0
+
 set build_path=%DIR%build
 if exist %build_path% rd /s /q %build_path%
 mkdir %build_path%\

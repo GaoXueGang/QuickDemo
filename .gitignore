@@ -1,5 +1,6 @@
 # bat sh
 .data
+build
 
 # Python
 *.pyc
