@@ -1,6 +1,8 @@
-# Xcode
-.data/
-obj
+# bat sh
+.data
 
 # Python
 *.pyc
+
+# Java
+*.class
