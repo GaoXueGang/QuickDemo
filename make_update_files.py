@@ -104,8 +104,8 @@ MAIN_VERSION = VERSION_NAME.split('.')[0]  # 主版本号
 
 # TODO: 修改这里的链接为你的服务端的下载链接
 URLS = {
-  "w": "https://down.samples.com/update",
-  "t": "https://test.down.samples.com/update",
+  "w": "http://127.0.0.1/update",
+  "t": "http://127.0.0.1/update",
 }
 
 if not sys.argv or len(sys.argv) < 2 or sys.argv[1] not in URLS.keys():
