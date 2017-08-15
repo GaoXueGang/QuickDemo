@@ -29,3 +29,6 @@ https://github.com/leitwolf/QuickXDev
 3. Visual Studio 2015 + BabeLua 调试环境
 
 官网下载
+
+# 说明
+框架只有linux的sh,本没有Windows的bat,已完善.
