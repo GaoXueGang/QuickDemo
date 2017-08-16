@@ -17,13 +17,14 @@ if not exist %DEST_DIR% mkdir %DEST_DIR%
 if exist %TARGET_FILE% del /s /q %TARGET_FILE%
 
 rem TODO: 在这里修改你的项目的加密密码，不得超过16位，记得也修改encrypt_res.py脚本中的资源的密码
-set PASSWORD="gasfas___23232+_"
+set PASSWORD="ygskciwucgdkocme"
 set YOUR_SIGN="xxtea"
 set ENCRYPT_COMMAND= -e xxtea_zip -ek %PASSWORD% -es %YOUR_SIGN% 
 
 rem 编译游戏脚本
 @echo 加密: %ENCRYPT_COMMAND%
 call %COMPILE_BIN% -b 32 -i %SCRIPTS_DIR% -o %TARGET_FILE% %ENCRYPT_COMMAND%
+
 set DIR=%~dp0
 
 rem 编译入口文件

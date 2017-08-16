@@ -16,15 +16,13 @@ build_path = BASE_PATH + "build/res"  # 行尾无/号
 
 # TODO: 在这里修改你的项目的加密密码，不得超过16位，记得与game_build.sh脚本中的密码一致
 if sys.argv[1]=="":
-	print "sign_key error!"
+	sign_key = ""			# 不得超过16位
 else:
-	print "sign_key:",sys.argv[1]
+	sign_key = sys.argv[1]  # 不得超过16位
 if sys.argv[2]=="":
-	print "you_sign error!"
+	you_sign = ""
 else:
-	print "you_sign:",sys.argv[2]
-sign_key = sys.argv[1]  # 不得超过16位
-you_sign = sys.argv[2]
+	you_sign = sys.argv[2]
 
 ignore_list = [  # 一行一个，设定不要加密的资源文件名称
     "images/login.png",
