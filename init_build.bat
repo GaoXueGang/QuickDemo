@@ -21,3 +21,5 @@ rem fi
 
 rem # 编译游戏脚本
 %COMPILE_BIN% -i %SCRIPTS_DIR% -o %TARGET_FILE% 
+
+

@@ -40,3 +40,4 @@ xcopy %DIR%\.data\*.zip %build_path%\res\ /s /e /y
 
 python %DIR%/make_update_files.py w
 
+
