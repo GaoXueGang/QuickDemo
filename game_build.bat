@@ -12,21 +12,21 @@ rem fi
 
 set COMPILE_BIN=%QUICK_V3_ROOT%quick\bin\compile_scripts.bat
 
-mkdir %DEST_DIR%
+if not exist %DEST_DIR% mkdir %DEST_DIR%
 
 if exist %TARGET_FILE% del /s /q %TARGET_FILE%
 
 rem # TODO: 在这里修改你的项目的加密密码，不得超过16位，记得也修改encrypt_res.py脚本中的资源的密码
-rem set PASSWORD=TODO_SET_PWD
-rem set ENCRYPT_COMMAND= -e xxtea_zip -ek %PASSWORD% -es YOUR_SIGN 
+set PASSWORD=TODO_SET_PWD
+set ENCRYPT_COMMAND= -e xxtea_zip -ek %PASSWORD% -es YOUR_SIGN 
 
-rem # 编译游戏脚本
-rem %COMPILE_BIN% -i %SCRIPTS_DIR% -o %TARGET_FILE%
+@echo 编译游戏脚本
+call %COMPILE_BIN% -b 32 -i %SCRIPTS_DIR% -o %TARGET_FILE% 
+rem # init_build.bat修改了DIR
+set DIR=%~dp0
 
-rem # 编译入口文件
-
+@echo 编译入口文件
 call %DIR%init_build.bat
-
 rem # init_build.bat修改了DIR
 set DIR=%~dp0
 
@@ -36,6 +36,7 @@ mkdir %build_path%\
 
 python %DIR%encrypt_res.py
 
-xcopy -rf %DIR%/.data/*.zip %build_path%/res/
+xcopy %DIR%\.data\*.zip %build_path%\res\ /s /e /y
 
 python %DIR%/make_update_files.py w
+

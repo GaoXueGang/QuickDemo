@@ -6,8 +6,8 @@ set DEST_DIR=%DIR%.data
 set TARGET_FILE=%DEST_DIR%\init.zip
 set COMPILE_BIN=%QUICK_V3_ROOT%quick\bin\compile_scripts.bat
 
-mkdir %DEST_DIR%\
-mkdir %SCRIPTS_DIR%\
+if not exist %DEST_DIR% mkdir %DEST_DIR%\
+if not exist %SCRIPTS_DIR% mkdir %SCRIPTS_DIR%\
 
 del /s /q %SCRIPTS_DIR%\*.lua
 if exist %TARGET_FILE% del /s /q %TARGET_FILE%
