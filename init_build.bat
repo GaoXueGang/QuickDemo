@@ -1,4 +1,4 @@
-@echo off
+锘緻echo off
 
 set DIR=%~dp0
 set SCRIPTS_DIR=%DIR%.data\src
@@ -14,12 +14,15 @@ if exist %TARGET_FILE% del /s /q %TARGET_FILE%
 
 xcopy %DIR%src\*.lua %SCRIPTS_DIR%\ /s /e /y
 
-rem set ENCRYPT_COMMAND=""
-rem if [ $1 ]; then
-rem    ENCRYPT_COMMAND=" -e xxtea_zip -ek $1 -es YOUR_SIGN "
-rem fi
+rem 加密
+set PASSWORD="%1"
+set YOUR_SIGN="%2"
+set	ENCRYPT_COMMAND=-e xxtea_zip -ek %PASSWORD% -es %YOUR_SIGN%
+if %PASSWORD%=="" set ENCRYPT_COMMAND=""
+if %YOUR_SIGN%=="" set ENCRYPT_COMMAND=""
+@echo 加密: %ENCRYPT_COMMAND%
 
-rem # 缂栬瘧娓告垙鑴氭湰
-%COMPILE_BIN% -i %SCRIPTS_DIR% -o %TARGET_FILE% 
+rem 编译游戏脚本
+%COMPILE_BIN% -i %SCRIPTS_DIR% -o %TARGET_FILE% %ENCRYPT_COMMAND%
 
 

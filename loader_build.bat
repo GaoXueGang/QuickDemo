@@ -1,6 +1,6 @@
 @echo off
 
-rem # 这是个更新 loader.zip 的快捷工具，请注意自己的路径
+rem 这是个更新 loader.zip 的快捷工具，请注意自己的路径
 
 set MY_DIR=%~dp0
 set MY_DEST_DIR=%MY_DIR%res

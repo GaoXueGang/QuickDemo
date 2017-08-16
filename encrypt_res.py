@@ -10,16 +10,25 @@ import subprocess
 import shutil
 from copy import deepcopy
 
-
 BASE_PATH = os.path.dirname(os.path.realpath(__file__)) + os.sep
 res_path = BASE_PATH + "res"  # 行尾无/号
 build_path = BASE_PATH + "build/res"  # 行尾无/号
+
 # TODO: 在这里修改你的项目的加密密码，不得超过16位，记得与game_build.sh脚本中的密码一致
-sign_key = "TODO_SET_PWD"  # 不得超过16位
+if sys.argv[1]=="":
+	print "sign_key error!"
+else:
+	print "sign_key:",sys.argv[1]
+if sys.argv[2]=="":
+	print "you_sign error!"
+else:
+	print "you_sign:",sys.argv[2]
+sign_key = sys.argv[1]  # 不得超过16位
+you_sign = sys.argv[2]
+
 ignore_list = [  # 一行一个，设定不要加密的资源文件名称
     "images/login.png",
 ]
-
 
 def file_extension(path):  # 文件扩展名
     return os.path.splitext(path)[1]
@@ -75,10 +84,10 @@ remove_path(build_path)
 
 if(sys.platform == "win32") :
 	QUICK_V3_ROOT = os.environ["QUICK_V3_ROOT"]
-	cmd = "%s/quick/bin/encrypt_res.bat -i %s -o %s -es YOUR_SIGN -ek %s" % (QUICK_V3_ROOT, res_path, build_path, sign_key)
+	cmd = "%s/quick/bin/encrypt_res.bat -i %s -o %s -es %s -ek %s" % (QUICK_V3_ROOT, res_path, build_path, you_sign, sign_key)
 else:
-	cmd = "$QUICK_V3_ROOT/quick/bin/encrypt_res.sh -i %s -o %s -es YOUR_SIGN -ek %s" % \
-      (res_path, build_path, sign_key)
+	cmd = "$QUICK_V3_ROOT/quick/bin/encrypt_res.sh -i %s -o %s -es %s -ek %s" % \
+      (res_path, build_path, you_sign, sign_key)
 	  
 subprocess.call(cmd, shell=True)
 list_path_by_handler(res_path, copy_no_encrypt_file_handler)
